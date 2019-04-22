@@ -1,0 +1,27 @@
+[
+  {
+    "environment": [
+      {
+        "name": "NODE_ENV",
+        "value": "production"
+      },
+      {
+        "name": "SQS_URL",
+        "value": "${sqs_url}"
+      }
+    ],
+    "essential": true,
+    "image": "${image}",
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "/ecs/${cluster_name}",
+        "awslogs-region": "${region}",
+        "awslogs-stream-prefix": "ecs"
+      }
+    },
+    "mountPoints": [],
+    "name": "${cluster_name}",
+    "volumesFrom": []
+  }
+]
