@@ -1,0 +1,19 @@
+{
+  "name": "fargate-sqs-consumer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.js"
+  },
+  "author": "Michael Greenshtein",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.441.0",
+    "lambda-log": "^2.2.0"
+  },
+  "devDependencies": {
+    "dotenv": "^7.0.0"
+  }
+}

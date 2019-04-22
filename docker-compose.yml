@@ -1,0 +1,23 @@
+version: '2.2'
+services:
+  sqs:
+    container_name: sqs
+    image: softwaremill/elasticmq
+    ports:
+      - 9324:9324
+    volumes:
+      - ./sqs.conf:/opt/elasticmq.conf
+    networks:
+        - fargate
+  consumer:
+    container_name: consumer
+    depends_on:
+      - "sqs"
+    build:
+      context: .
+    volumes:
+      - ./app:/usr/src/app
+    networks:
+      - fargate
+networks:
+  fargate:
